@@ -11,11 +11,35 @@ body {
   height: auto;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: auto 1fr;
 }
 
+/* -----------------------------------header */
+
 .header {
-  background-color: red;
+  padding: 15px;
+  background-color: #2196f3;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.header-right {
+  display: flex;
+  align-items: space-between;
+  gap: 15px;
+}
+
+.sound, .score {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main {
