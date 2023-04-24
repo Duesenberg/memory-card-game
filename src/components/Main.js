@@ -1,9 +1,13 @@
 import React from "react";
+import CardsList from "./CardsList";
 
-export default function Main() {
+export default function Main(props) {
   return(
     <div className="main">
-      Main
+      <CardsList 
+        cards={props.cards} 
+        setCardToClicked={props.setCardToClicked} 
+        playSound={props.playSound} checkForGameOver={props.checkForGameOver} />
     </div>
   )
 }
