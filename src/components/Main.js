@@ -7,7 +7,9 @@ export default function Main(props) {
       <CardsList 
         cards={props.cards} 
         setCardToClicked={props.setCardToClicked} 
-        playSound={props.playSound} checkForGameOver={props.checkForGameOver} />
+        playSound={props.playSound} checkForGameOver={props.checkForGameOver}
+        checkForWin={props.checkForWin} updateScore={props.updateScore}
+        shuffleCardArray={props.shuffleCardArray} />
     </div>
   )
 }

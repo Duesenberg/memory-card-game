@@ -6,6 +6,9 @@ export default function CardsList(props) {
     props.playSound();
     props.checkForGameOver(e);
     props.setCardToClicked(e);
+    props.updateScore();
+    props.checkForWin();
+    props.shuffleCardArray();
   }
 
   return(

@@ -8,6 +8,9 @@ function App() {
   const [score, setScore] = useState(0);
   const [sound, setSound] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [win, setWin] = useState(false);
+  const [difficulty, setDifficulty] = useState(null);
+  const [gameStart, setGameStart] = useState(false);
   const [cards, setCards] = useState([{
       content: '24',
       clicked: false,
@@ -73,17 +76,46 @@ function App() {
     cards.forEach((card) => {
       if (card.id === e.target.id && card.clicked === true) setGameOver(true);
     });
-    console.log(gameOver);
   }
+
+  const checkForWin = () => {
+    let win = true;
+    cards.forEach(card => {
+      if (card.clicked === false) win = false;
+    })
+    setWin(win);
+  }
+
+  const updateScore = () => {
+    let score = 0;
+    cards.forEach(card => {
+      if (card.clicked === true) score += 1;
+    })
+    setScore(score);
+  }
+
+  const shuffleCardArray = () => {
+    let cardArray = cards;
+    for (let i = cardArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cardArray[i], cardArray[j]] = [cardArray[j], cardArray[i]];
+    }
+    setCards(cardArray);
+}
 
   return (
     <div className="App">
       <Header 
         score={score} sound={sound} toggleSound={toggleSound}
         playSound={playSound} />
+      {gameStart === true ?
       <Main 
-        cards={cards} setCardToClicked={setCardToClicked}
-        playSound={playSound} checkForGameOver={checkForGameOver} />
+      cards={cards} setCardToClicked={setCardToClicked}
+      playSound={playSound} checkForGameOver={checkForGameOver}
+      checkForWin={checkForWin} updateScore={updateScore}
+      shuffleCardArray={shuffleCardArray} /> : null
+      }
+
     </div>
   );
 }
