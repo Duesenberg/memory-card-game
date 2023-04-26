@@ -21,8 +21,10 @@ export default function Header(props) {
           <Button 
             variant="contained" color="primary" 
             href="https://github.com/Duesenberg" target="_blank"
-            onClick={props.playSound}>
-              <PsychologyAltOutlinedIcon fontSize="large" />
+            onClick={props.playSound}
+            sx={{height: '100%'}} >
+              <PsychologyAltOutlinedIcon 
+                fontSize="large" />
           </Button>
       </div>
 
@@ -33,13 +35,15 @@ export default function Header(props) {
             <Button 
               variant="contained" 
               color="primary" 
-              onClick={props.toggleSound}>
+              onClick={handleAudioClick}
+              sx={{flex: 1}}>
                 <VolumeOffOutlinedIcon fontSize="large" />
             </Button> :
             <Button 
               variant="contained" 
               color="primary" 
-              onClick={props.toggleSound}>
+              onClick={handleAudioClick}
+              sx={{flex: 1}}>
                 <VolumeUpOutlinedIcon fontSize="large" />
             </Button>
           }
@@ -53,7 +57,12 @@ export default function Header(props) {
           <Typography 
             variant="h6" 
             color="white" 
-            textAlign="center">
+            textAlign="center"
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              flex: 1
+            }}>
               {props.score}
           </Typography>
         </div>

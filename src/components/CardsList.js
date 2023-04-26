@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Grid, Typography, Zoom } from '@mui/material';
 import React from 'react';
 
 export default function CardsList(props) {
@@ -25,8 +25,9 @@ export default function CardsList(props) {
       justify="center">
         {props.cards.map((card) => {
           return(
+          <Zoom key={card.id} in={true}>
           <Grid 
-            item xs={6} md={3} key={card.id}
+            item xs={6} md={3} 
             style={{
               margin: '0',
               padding: '15px',
@@ -49,6 +50,7 @@ export default function CardsList(props) {
                 </Typography>
               </Button>
           </Grid>
+          </Zoom>
           )
         })}
     </Grid>
