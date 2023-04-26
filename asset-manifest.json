@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/memory-card-game/static/css/main.52007933.css",
+    "main.js": "/memory-card-game/static/js/main.897be6c1.js",
+    "static/media/clickSound.mp3": "/memory-card-game/static/media/clickSound.7f139b396a1194e8727a.mp3",
+    "index.html": "/memory-card-game/index.html",
+    "main.52007933.css.map": "/memory-card-game/static/css/main.52007933.css.map",
+    "main.897be6c1.js.map": "/memory-card-game/static/js/main.897be6c1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52007933.css",
+    "static/js/main.897be6c1.js"
+  ]
+}
