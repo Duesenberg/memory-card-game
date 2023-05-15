@@ -9,7 +9,7 @@ export default function Main(props) {
     <div className="main">
       {props.gameStart === true ?
       props.gameOver === true ?
-      <GameOver restartGame={props.restartGame} playSound={props.playSound} /> :
+      <GameOver playSound={props.playSound} /> :
       props.win === true ?
       <GameWon restartGame={props.restartGame} playSound={props.playSound} /> :
       <CardsList 

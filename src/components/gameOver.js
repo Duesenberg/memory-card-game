@@ -2,9 +2,9 @@ import { Button, Card, CardActions, CardContent, CardHeader, Typography } from '
 import React from 'react';
 
 export default function GameOver(props) {
-  const handleClick = () => {
-    props.playSound();
-    props.restartGame();
+  const restartTheGame = () => {
+    props.playSound()
+    setTimeout(window.location.reload.bind(window.location), 250)
   }
 
   return(
@@ -34,7 +34,7 @@ export default function GameOver(props) {
             alignItems: 'center'
           }}>
           <Button 
-            variant='contained' id='restart' onClick={handleClick}>
+            variant='contained' id='restart' onClick={restartTheGame}>
               Play Again</Button>
         </CardActions>
       </Card>

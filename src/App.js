@@ -78,15 +78,6 @@ function App() {
 
   const startGame = () => setGameStart(true);
 
-  const restartGame = () => {
-    setScore(0);
-    setGameOver(false);
-    setWin(false);
-    setDifficulty('Easy');
-    setGameStart(false);
-    setCards([]);
-  }
-
   return (
     <div className="App">
       <Header 
@@ -99,7 +90,7 @@ function App() {
       shuffleCardArray={shuffleCardArray} gameStart={gameStart}
       createCardArray={createCardArray} setGameDifficulty={setGameDifficulty}
       startGame={startGame} difficulty={difficulty} gameOver={gameOver}
-      win={win} score={score} restartGame={restartGame} />
+      win={win} score={score} />
     </div>
   );
 }
